@@ -1,0 +1,95 @@
+#-----------------------------------------
+# Dark Modern
+# Ian Mitchell
+# Gnu GPL v.2 or later
+# Graphs are taken from TeeJee Tech, credit where credit is due.
+#----------------------------------------
+
+
+background yes
+use_xft yes
+xftfont 123:size=8
+xftalpha 0.1
+update_interval 0.5
+total_run_times 0
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 250 5
+maximum_width 400
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color gray
+default_shade_color red
+default_outline_color green
+alignment top_right
+gap_x 10
+gap_y 10
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale no
+use_spacer yes
+
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+
+TEXT
+${font Sans:size=30}${color White}${time %I}:${time %M} ${time %p}
+${font Sans:size=15}${color White}${time %A}, ${time %B} ${time %e}, ${time %Y}
+
+${font Sans:size=10}SYSTEM  ${hr 1.75}
+${font Sans:size=8}
+Kernel${alignr}  $kernel
+Hostname${alignr}$nodename
+CPU${alignr}Intel Core i5-4670k@4x 3.8 GHz # Make this whatever processor you have
+GPU${alignr} EVGA GeForce GTX 970 SC # Make this whatever you have
+Memory${alignr} $memmax
+
+${font Sans:size=10} PROCESSORS ${hr 1.75}
+${font Sans:size=8}
+CPU 1 ${cpu cpu1}% ${cpubar cpu1}
+CPU 2 ${cpu cpu2}% ${cpubar cpu2}
+CPU 3 ${cpu cpu3}% ${cpubar cpu3}
+CPU 4 ${cpu cpu4}% ${cpubar cpu4}
+${color2}CPU ${color0} ${cpu cpu0}% ${cpubar cpu0} 
+
+${font Sans:size=10} MEMORY ${hr 1.75}
+
+$mem / $memmax $alignr $memperc%
+$membar
+
+${font Sans:size=10} NETWORK ${hr 1.75}
+
+IP on wlp3s0 ${alignr} ${addr wlp3s0}
+External IP ${alignr} ${exec curl -s www.icanhazip.com}
+
+Upload ${alignr} ${upspeed wlp3s0}
+Download ${alignr} ${upspeed wlp3s0}
+
+${font Sans:size=10} TOP PROCESSES ${hr 1.75}
+
+${top_mem name 2}${alignr}${top mem 2} %
+${top_mem name 3}${alignr}${top mem 3} %
+${top_mem name 4}${alignr}${top mem 4} %
+${top_mem name 5}${alignr}${top mem 5} %
+
+
+#${font Sans:size=10} WEATHER ${hr 1.75}
+# --- WOEID (Location id) --- #
+#${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=2393370&u=f" -o ~/.cache/weather.xml}\ # Put where ever your city is.
+# tempurature
+
+#${execi 300 cp -f outline/$(grep "yweather:condition" ~/.cache/weather.xml }
