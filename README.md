@@ -3,6 +3,7 @@ A set of conkies that are designed to give as much information in as small a spa
 
 # Preview Images
 ![Conky Bright Modern][bm]
+
 ![Conky Bright Modern Graphs][bmg]
 [bm]: https://github.com/bubbadoobop/Conky-Bright-Modern/blob/master/bright_modern/dark_modern.png
 [bmg]: https://github.com/bubbadoobop/Conky-Bright-Modern/blob/master/bright_modern/dark_modern-graphs.png
