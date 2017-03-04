@@ -10,7 +10,7 @@ A set of conkies that are designed to give as much information in as small a spa
 
 
 ## Changing the options for GPU, CPU, etc.
-----
+
 When viewing the preview images for this conky, it should be apparent that the GPU and CPU are being displayed. In order to do that, go to line 57, and change the CPU and GPU to whatever you use. The lines of code should look like this...
 
 ```
